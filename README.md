@@ -1,1 +1,2 @@
 # KidzKoinz
+A cool app
