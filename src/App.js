@@ -1,7 +1,7 @@
 import React from "react";
-import RegisterLogin from "./components/ui/form/RegisterLogin";
+import Login from "./components/views/login/Login";
 function App() {
-  return <RegisterLogin requestUrl="http://this.is/a/url" />;
+  return <Login />;
 }
 
 export default App;

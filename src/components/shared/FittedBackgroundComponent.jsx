@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 
-class BackgroundComponent extends Component {
+class FittedBackgroundComponent extends Component {
   render() {
     const bgStyle = {
       top: "0",
       left: "0",
       zIndex: "-1",
-      backgroundImage: `url(${this.props.imageUrl})`,
+      backgroundImage: `url(${this.props.image})`,
       backgroundPosition: "50% 50%",
       backgroundSize: "cover",
       width: "100%",
@@ -17,4 +17,4 @@ class BackgroundComponent extends Component {
   }
 }
 
-export default BackgroundComponent;
+export default FittedBackgroundComponent;
