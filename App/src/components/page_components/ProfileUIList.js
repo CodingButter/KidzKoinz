@@ -24,8 +24,11 @@ const MyAvatarWrapper = styled.div`
 `;
 
 const ProfileName = styled.p`
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.7);
   color: white;
+  z-index:3;
+  bottom:0px;
+  position:absolute;
 `;
 
 const ProfileUIList = ({ items, name }) => {

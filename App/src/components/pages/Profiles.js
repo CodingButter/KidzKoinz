@@ -16,6 +16,16 @@ const ProfileWrapper = styled.div`
   background:rgba(0,0,0,.5);
 `;
 
+const ParentUL = styled.div`
+  width:30%;
+  border-right:1px solid rgba(255,255,0,.4);
+  float:left
+`;
+
+const ChildUL = styled.div`
+  width:60%;
+  float:right;
+`;
 const Login = props => {
   const [loading, setLoading] = useState(true);
   const [images, setImages] = useState(null);
@@ -25,7 +35,6 @@ const Login = props => {
   const callAPI = () => {
     getAvatarsByHousehold(1).then(response => {
       if (loading) {
-        console.log(response);
         setImages(response);
         setLoading(false);
       }
@@ -37,8 +46,14 @@ const Login = props => {
       <FittedBackgroundComponent image={BackgroundImage} />
       {!loading && (
         <ProfileWrapper>
-          <ProfileUIList name="parent-profile-list" items={images.parents} />
-          <ProfileUIList name="child-profile-list" items={images.children} />
+          <ParentUL>
+            <ProfileUIList items={images.parents} />
+            <ClearFix />
+          </ParentUL>
+          <ChildUL>
+            <ProfileUIList items={images.children} />
+            <ClearFix />
+          </ChildUL>
           <ClearFix />
         </ProfileWrapper>
       )
