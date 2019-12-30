@@ -3,14 +3,17 @@ import AvatarPicture from "../presentationals/AvatarPicture";
 import styled from "styled-components";
 
 const MyUl = styled.ul`
-  max-width: 1000px;
-  width: 100%;
+  float:left;
   padding: 20px;
   margin: auto;
   text-align: center;
 `;
 
-const MyLi = styled.li``;
+const MyLi = styled.li`
+  list-style:none;
+  float:left;
+  margin:10px;
+`;
 const MyAvatarWrapper = styled.div`
   position: relative;
   width: 75px;
@@ -25,20 +28,22 @@ const ProfileName = styled.p`
   color: white;
 `;
 
-const ProfileUIList = ({ items }) => {
+const ProfileUIList = ({ items, name }) => {
   return (
-    <MyUl>
-      {items.map((item, index) => {
-        return (
-          <MyLi key={index}>
-            <MyAvatarWrapper>
-              <AvatarPicture avatarUrl={item.avatar} />
-              <ProfileName>{item.nickname}</ProfileName>
-            </MyAvatarWrapper>
-          </MyLi>
-        );
-      })}
-    </MyUl>
+    <MyUl className={"profile-list" + name}>
+      {
+        items.map((item, index) => {
+          return (
+            <MyLi key={index}>
+              <MyAvatarWrapper>
+                <AvatarPicture avatarUrl={item.avatar} />
+                <ProfileName>{item.nickname}</ProfileName>
+              </MyAvatarWrapper>
+            </MyLi>
+          );
+        })
+      }
+    </MyUl >
   );
 };
 

@@ -7,9 +7,18 @@ const base_url = "http://10.0.0.218:80/KidzKoinz/server/";
  * @param {object} data The data to be sent to the server
  * @returns {object}
  */
-export const simpleRequest = (request_type, data) => {
-  data.request_type = request_type;
-  return axios.get(base_url, { params: data }).then(response => {
-    return response.data;
-  });
+
+
+const later = (delay, value) =>
+  new Promise(resolve => setTimeout(resolve, delay, value));
+
+export const simpleRequest = (request_type, data, test_data) => {
+  if (test_data) {
+    return later(200, test_data);
+  } else {
+    data.request_type = request_type;
+    return axios.get(base_url, { params: data }).then(response => {
+      return response.data;
+    });
+  }
 };

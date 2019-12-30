@@ -12,6 +12,13 @@ export const getAvatarById = avatarId => {
  * @param {integer} householdId
  * @returns {array}
  */
+
+const test_data = {
+  "parents": [{ "nickname": "jnizzle", "avatar": "http://localhost/KidzKoinz/Server/avatars/lego_batman.jpg" }],
+  "children": [{ "nickname": "Flynnie", "avatar": "http://localhost/KidzKoinz/Server/avatars/my_little_pony.jpg" },
+  { "nickname": "Athena", "avatar": "http://localhost/KidzKoinz/Server/avatars/powerpuff_girl.jpg" }]
+};
 export const getAvatarsByHousehold = id => {
-  return simpleRequest("GET_HOUSEHOLD_AVATARS", { id: id });
+
+  return simpleRequest("GET_HOUSEHOLD_AVATARS", { id: id }, test_data);
 };

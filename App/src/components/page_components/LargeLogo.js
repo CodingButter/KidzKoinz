@@ -1,26 +1,25 @@
-import React, { Component } from "react";
+import React from "react";
 import Logo from "../../img/logo.png";
-class LargeLogo extends Component {
-  render() {
-    const logoStyle = {
-      height: "20vh",
-      minHeight: "70px",
-      maxHeight: "110px"
-    };
+import styled from "styled-components";
 
-    const logoWrapperStyle = {
-      padding: "10px",
-      margin: "10px",
-      backgroundColor: "rgb(255,255,255)",
-      background:
-        "linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 70%)"
-    };
-    return (
-      <div style={logoWrapperStyle}>
-        <img src={Logo} alt="KidzKoinz Logo" style={logoStyle} />
-      </div>
-    );
-  }
+const LogoImg = styled.img`
+  height: 20vh;
+  min-height: 70px;
+  max-height: 110px;
+`;
+const LogoWrapper = styled.div`
+  padding: 10px;
+  margin: 10px;
+  background-color: rgb(255,255,255);
+  background:linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 70%);
+  width:80%;
+`;
+const LargeLogo = () => {
+  return (
+    <LogoWrapper>
+      <LogoImg src={Logo} alt="KidzKoinz Logo" />
+    </LogoWrapper >
+  );
 }
 
 export default LargeLogo;
