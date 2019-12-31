@@ -36,7 +36,7 @@
                         $children = [];
                         foreach($parents as $parent){
                                 GLOBAL $API;
-                                $children_resp = $API["GET_CHILREN_BY_PARENT"](["id"=>$parent['id']]);
+                                $children_resp = $API["GET_CHILDREN_BY_PARENT"](["id"=>$parent['id']]);
                                 foreach($children_resp as $child){
                                         array_push($children,$child);
                                 }
@@ -52,7 +52,7 @@
                         $parents = $qry->fetchAll(PDO::FETCH_ASSOC);
                         return $parents;
                 },
-                "GET_CHILREN_BY_PARENT"=>function($data){
+                "GET_CHILDREN_BY_PARENT"=>function($data){
                         GLOBAL $con;
                         $parent_id = $data['id'];
                         $sql = "select * from children inner join child_parent
@@ -62,7 +62,32 @@
                         $qry->execute(array(":parent_id"=>$parent_id));
                         $children = $qry->fetchALL(PDO::FETCH_ASSOC);
                         return $children;
+                },        
+                "REGISTER_NEW_PARENT"=>function($data){
+                        GLOBAL $con;
+                        $sql = "SELECT COUNT(id) as total FROM parents WHERE email = :email";
+                        $qry = $con->prepare($sql);
+                        $qry->execute(array(":email"=>$data["email"]));
+                        $num_rows = $qry->fetch(PDO::FETCH_ASSOC);
+                        if($num_rows["total"]>0){
+                                echo "SOME ERROR CATCHING STUFF";
+                        }else{
+                                $values = array(
+                                        ":first_name"=>$data["first_name"],
+                                        ":last_name"=>$data["last_name"],
+                                        ":email"=>$data["email"],
+                                        ":household_id"=>$data["household_id"],
+                                        ":avatar_id"=>$data["avatar_id"],
+                                        ":uuid"=>$data["uuid"]
+                                );
+                                $sql = "INSERT INTO parents (first_name,last_name,email,password,household_id,avatar_id,uuid);
+                                VALUES (:first_name,:last_name,:email,:password,:household_id,:avatar_id,:uuid)";
+                                $qry = $con->prepare($sql);
+                                $qry->execute()
+                                
+                        }
                 }
+
         ];
 
        echo json_encode($API[$_REQUEST['request_type']]($_REQUEST),1);

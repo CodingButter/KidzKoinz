@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components";
+import styled from "styled-components/macro";
 
 const MyDiv = styled.div`
   top: 0;
@@ -9,7 +9,7 @@ const MyDiv = styled.div`
   background-size: cover;
   width: 100%;
   height: 100%;
-  overflow:hidden;
+  overflow: hidden;
   position: absolute;
   background-image: url(${props => props.image});
 `;
