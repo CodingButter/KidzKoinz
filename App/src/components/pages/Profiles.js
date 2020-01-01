@@ -4,51 +4,52 @@ import FittedBackgroundComponent from "../presentationals/FittedBackgroundCompon
 import BackgroundImage from "../../img/profiles_background.jpg";
 import LargeLogo from "../presentationals/LargeLogo";
 import GridContainer from "../containers/GridContainer";
-import ProfileUIList from "../containers/ProfileUIList";
-import styled from "styled-components";
+import ProfileUIList from "../containers/ProfileList";
 
 const containerOptions = {
-  cols: 12,
-  rows: 8
+  cols: 8,
+  rows: 6
 };
 
-const profileListOptions = {
+const parentListOptions = {
   startRow: 2,
-  startCol: 4,
-  width: 8,
+  startCol: 3,
+  width: 2,
   height: 2
 };
-
-const MyContainer = styled.div`
-  grid-column: 1;
-  grid-row:1;
-`;
+const childListOptions = {
+  startRow: 2,
+  startCol: 5,
+  width: 2,
+  height: 2
+};
 
 const Profile = props => {
   const [loading, setLoading] = useState(true);
   const [profiles, setProfiles] = useState(null);
   useEffect(() => {
-    callAPI();
-  });
-
-  const callAPI = () => {
     getAvatarsByHousehold(1).then(response => {
-      if (loading) {
-        setProfiles(response);
-        setLoading(false);
-      }
+      setProfiles(response);
+      setLoading(false);
     });
-  };
+  }, []);
   return (
-    <MyContainer>
+    <>
       <LargeLogo />
       <FittedBackgroundComponent image={BackgroundImage} />
       <GridContainer options={containerOptions}>
         {!loading && (
-          <ProfileUIList profiles={profiles.parents} options={profileListOptions} />
+          <>
+            <GridContainer options={parentListOptions}>
+              <ProfileUIList profiles={profiles.parents} />
+            </GridContainer>
+            <GridContainer options={childListOptions}>
+              <ProfileUIList profiles={profiles.children} />
+            </GridContainer>
+          </>
         )}
       </GridContainer>
-      <MyContainer />
-      );
-    };
-    export default Profile;
+    </>
+  );
+};
+export default Profile;

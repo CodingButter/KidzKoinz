@@ -14,6 +14,13 @@ const GlobalStyle = createGlobalStyle`
   #root{
     width:100%;
     height:100%;
+    display:grid;
+    grid-template-columns:1fr;
+    grid-template-rows:1fr;
+  }
+
+  .grid > * {
+    border: 2px solid rgb(214,232,182);
   }
 `;
 

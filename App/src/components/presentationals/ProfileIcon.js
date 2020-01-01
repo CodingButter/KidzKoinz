@@ -4,8 +4,8 @@ import AvatarPicture from "./AvatarPicture";
 
 const MyAvatarWrapper = styled.div`
   position: relative;
-  width: 75px;
-  height: 75px;
+  width: 100%;
+  height: 100%;
   border: 3px solid yellow;
   border-radius: 10%;
   overflow: hidden;
@@ -25,7 +25,7 @@ const ProfileIcon = ({ profile }) => {
       <AvatarPicture avatarUrl={profile.avatar} />
       <ProfileName>{profile.nickname}</ProfileName>
     </MyAvatarWrapper>
-  )
-}
+  );
+};
 
 export default ProfileIcon;

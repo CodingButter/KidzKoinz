@@ -3,15 +3,15 @@ import Logo from "../../img/logo.png";
 import styled from "styled-components/macro";
 
 const LogoImg = styled.img`
-    height:100%;
+  height: 100px;
+  width: 100px;
 `;
 const LogoWrapper = styled.div`
-  grid-row: 1;
-  grid-column: 1;
-  text-align:left;
-  width:100%;
-  height:100%;
-  position:absolute;
+  width: 80%;
+  height: 110px;
+  padding: 10px 20px;
+  text-align: left;
+  position: absolute;
   background-color: rgb(255, 255, 255);
   background: linear-gradient(
     90deg,
