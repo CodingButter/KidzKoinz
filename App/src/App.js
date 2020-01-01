@@ -2,32 +2,19 @@ import React from "react";
 import Profiles from "./components/pages/Profiles";
 import { createGlobalStyle } from "styled-components/macro";
 
-const GlobalStyle = createGlobalStyle`
-  body,html {
-    width:100%;
-    height:100%;
-    margin:none;
-    padding:none;
-    overflow:hidden;
-    box-sizing:border-box;
-  }
-  #root{
-    width:100%;
-    height:100%;
-    display:grid;
-    grid-template-columns:1fr;
-    grid-template-rows:1fr;
-  }
+import miniReset from "./miniReset";
 
-  .grid > * {
-    border: 2px solid rgb(214,232,182);
-  }
+import Header from "./components/Header";
+
+const GlobalStyle = createGlobalStyle`
+  ${miniReset}
 `;
 
 function App() {
   return (
     <>
-      <GlobalStyle whiteColor />
+      <GlobalStyle />
+      <Header />
       <Profiles />
     </>
   );
