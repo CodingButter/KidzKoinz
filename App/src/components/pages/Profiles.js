@@ -5,10 +5,11 @@ import BackgroundImage from "../../img/profiles_background.jpg";
 import LargeLogo from "../presentationals/LargeLogo";
 import GridContainer from "../containers/GridContainer";
 import ProfileUIList from "../containers/ProfileUIList";
+import styled from "styled-components";
 
 const containerOptions = {
-  innerCols: 12,
-  innerRows: 8
+  cols: 12,
+  rows: 8
 };
 
 const profileListOptions = {
@@ -17,6 +18,11 @@ const profileListOptions = {
   width: 8,
   height: 2
 };
+
+const MyContainer = styled.div`
+  grid-column: 1;
+  grid-row:1;
+`;
 
 const Profile = props => {
   const [loading, setLoading] = useState(true);
@@ -27,21 +33,22 @@ const Profile = props => {
 
   const callAPI = () => {
     getAvatarsByHousehold(1).then(response => {
-      if (!loading) {
-        console.log(profiles);
+      if (loading) {
         setProfiles(response);
         setLoading(false);
       }
     });
   };
   return (
-    <GridContainer options={containerOptions}>
+    <MyContainer>
       <LargeLogo />
       <FittedBackgroundComponent image={BackgroundImage} />
-      {!loading && (
-        <ProfileUIList profiles={profiles} options={profileListOptions} />
-      )}
-    </GridContainer>
-  );
-};
-export default Profile;
+      <GridContainer options={containerOptions}>
+        {!loading && (
+          <ProfileUIList profiles={profiles.parents} options={profileListOptions} />
+        )}
+      </GridContainer>
+      <MyContainer />
+      );
+    };
+    export default Profile;

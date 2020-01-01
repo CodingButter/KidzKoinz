@@ -9,6 +9,7 @@ const GlobalStyle = createGlobalStyle`
     margin:none;
     padding:none;
     overflow:hidden;
+    box-sizing:border-box;
   }
   #root{
     width:100%;

@@ -10,15 +10,18 @@ const MyImage = styled.div`
   width: 100%;
   height: 100%;
   position: absolute;
-  background-image: url(${props => props.avatarUrl});
+  background-image: url("${props => props.avatarUrl}");
 `;
 
-const AvatarPicture = ({ avatarUrl }) => (
-  <MyImage
-    alt="profile avatar"
-    avatarUrl={avatarUrl}
-    className="avatar-image"
-  />
-);
+const AvatarPicture = ({ avatarUrl }) => {
+  console.log(avatarUrl);
+  return (
+    <MyImage
+      alt="profile avatar"
+      avatarUrl={avatarUrl}
+      className="avatar-image"
+    />
+  );
+}
 
 export default AvatarPicture;

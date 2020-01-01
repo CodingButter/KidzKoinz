@@ -19,11 +19,13 @@ const ProfileName = styled.p`
   position: absolute;
 `;
 
-const ProfileIcon = ({ item }) => (
-  <MyAvatarWrapper>
-    <AvatarPicture avatarUrl={item.avatar} />
-    <ProfileName>{item.nickname}</ProfileName>
-  </MyAvatarWrapper>
-);
+const ProfileIcon = ({ profile }) => {
+  return (
+    <MyAvatarWrapper>
+      <AvatarPicture avatarUrl={profile.avatar} />
+      <ProfileName>{profile.nickname}</ProfileName>
+    </MyAvatarWrapper>
+  )
+}
 
 export default ProfileIcon;
