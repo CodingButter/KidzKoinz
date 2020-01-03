@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components/macro";
 
 const MyDiv = styled.div`
@@ -13,7 +12,4 @@ const MyDiv = styled.div`
   position: absolute;
   background-image: url(${props => props.image});
 `;
-
-const FittedBackgroundComponent = ({ image }) => <MyDiv image={image} />;
-
-export default FittedBackgroundComponent;
+export default MyDiv;

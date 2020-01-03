@@ -22,6 +22,6 @@ const AvatarPicture = ({ avatarUrl }) => {
       className="avatar-image"
     />
   );
-}
+};
 
 export default AvatarPicture;

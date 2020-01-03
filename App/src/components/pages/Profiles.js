@@ -2,32 +2,16 @@ import React, { useState, useEffect } from "react";
 import { getAvatarsByHousehold } from "../../api_managers/Avatar";
 import FittedBackgroundComponent from "../presentationals/FittedBackgroundComponent";
 import BackgroundImage from "../../img/profiles_background.jpg";
-import LargeLogo from "../presentationals/LargeLogo";
-import GridContainer from "../containers/GridContainer";
+import Container from "../containers/Container";
 import ProfileUIList from "../containers/ProfileList";
 
 import Edges from "../Edges";
 
 const containerOptions = {
-  cols: 8,
-  rows: 6
+  cols: 2
 };
 
-const parentListOptions = {
-  startRow: 2,
-  startCol: 3,
-  width: 2,
-  height: 2
-};
-
-const childListOptions = {
-  startRow: 2,
-  startCol: 5,
-  width: 2,
-  height: 2
-};
-
-const maxColumns = 4;
+const maxWidth = 300;
 
 const Profile = props => {
   const [loading, setLoading] = useState(true);
@@ -38,46 +22,26 @@ const Profile = props => {
       setLoading(false);
     });
   }, []);
-  if (!loading) {
-    //childListOptions.cols = 2;
-    //childListOptions.rows = 2;
-
-    childListOptions.cols = Math.min(maxColumns, profiles.children.length);
-    childListOptions.row =
-      Math.ceil(profiles.children.length / maxColumns) +
-      (profiles.children.length % (maxColumns - 1));
-
-    parentListOptions.cols = Math.min(maxColumns, profiles.parents.length);
-    parentListOptions.row =
-      Math.ceil(profiles.parents.length / maxColumns) +
-      (profiles.parents.length % (maxColumns - 1));
-  }
   return (
     <>
       <FittedBackgroundComponent image={BackgroundImage} />
 
       <Edges>
-        <GridContainer
+        <Container
           className={"profile-grid-container"}
           options={containerOptions}
         >
           {!loading && (
             <>
-              <GridContainer options={parentListOptions}>
-                <ProfileUIList
-                  maxColumns={maxColumns}
-                  profiles={profiles.parents}
-                />
-              </GridContainer>
-              <GridContainer options={childListOptions}>
-                <ProfileUIList
-                  maxColumns={maxColumns}
-                  profiles={profiles.children}
-                />
-              </GridContainer>
+              <Container maxWidth={maxWidth}>
+                <ProfileUIList profiles={profiles.parents} />
+              </Container>
+              <Container maxWidth={maxWidth}>
+                <ProfileUIList profiles={profiles.children} />
+              </Container>
             </>
           )}
-        </GridContainer>
+        </Container>
       </Edges>
     </>
   );

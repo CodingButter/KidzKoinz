@@ -1,21 +1,12 @@
 import React from "react";
 import ProfileIcon from "../presentationals/ProfileIcon";
-import GridContainer from "./GridContainer";
 
 const ProfileList = props => {
-  const { profiles, maxColumns } = props;
+  const { profiles } = props;
   return (
     <>
       {profiles.map((profile, index) => {
-        let listOptions = {
-          startCol: index % maxColumns,
-          startRow: 1
-        };
-        return (
-          <GridContainer options={listOptions} key={index}>
-            <ProfileIcon profile={profile} />
-          </GridContainer>
-        );
+        return <ProfileIcon profile={profile} />;
       })}
     </>
   );
