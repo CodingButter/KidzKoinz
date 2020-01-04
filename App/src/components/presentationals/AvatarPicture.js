@@ -14,7 +14,6 @@ const MyImage = styled.div`
 `;
 
 const AvatarPicture = ({ avatarUrl }) => {
-  console.log(avatarUrl);
   return (
     <MyImage
       alt="profile avatar"

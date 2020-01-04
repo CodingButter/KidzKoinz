@@ -6,7 +6,7 @@ const ProfileList = props => {
   return (
     <>
       {profiles.map((profile, index) => {
-        return <ProfileIcon profile={profile} />;
+        return <ProfileIcon key={index} profile={profile} />;
       })}
     </>
   );

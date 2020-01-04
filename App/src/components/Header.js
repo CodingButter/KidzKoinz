@@ -4,15 +4,30 @@ import Edges from "./Edges";
 
 import LogoImage from "../img/logo.png";
 
+import { Link } from "react-router-dom";
+
 export default props => {
   return (
     <Header>
       <Edges>
-        <Logo src={LogoImage} />
+        <Link to="/">
+          <Logo src={LogoImage} />
+        </Link>
+        <Nav>
+          <Link to="/profiles">Profiles</Link>
+          <Link to="/login">Login</Link>
+        </Nav>
       </Edges>
     </Header>
   );
 };
+
+const Nav = styled.nav`
+  display: flex;
+  > a {
+    margin-right: 10px;
+  }
+`;
 
 const Header = styled.div`
   display: flex;

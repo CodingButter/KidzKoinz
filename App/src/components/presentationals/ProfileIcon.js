@@ -4,8 +4,8 @@ import AvatarPicture from "./AvatarPicture";
 
 const MyAvatarWrapper = styled.div`
   position: relative;
-  width: 150px;
-  height: 150px;
+  width: 100px;
+  padding-bottom: 100px;
 
   border: 3px solid yellow;
   border-radius: 10%;

@@ -12,4 +12,5 @@ const MyDiv = styled.div`
   position: absolute;
   background-image: url(${props => props.image});
 `;
+
 export default MyDiv;
