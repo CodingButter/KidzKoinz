@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import ProfileIcon from "../components/presentationals/ProfileIcon";
+import ProfileIcon from "../components/ProfileIcon";
 import Edges from "../components/Edges";
 
 // import { useMutation } from "@apollo/react-hooks";

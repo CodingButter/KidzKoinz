@@ -6,7 +6,7 @@ import { ApolloProvider } from "@apollo/react-hooks";
 
 import miniReset from "./miniReset";
 import Header from "./components/Header";
-import FittedBackgroundComponent from "./components/presentationals/FittedBackgroundComponent";
+import FittedBackgroundComponent from "./components/FittedBackgroundComponent";
 
 import backgroundImage from "./img/profiles_background.jpg";
 
@@ -24,6 +24,7 @@ const client = new ApolloClient({
   uri: "http://jnich.tk/wordpress/graphql"
 });
 
+//
 // Set up global state with useContext
 // Impliment a router
 
@@ -35,14 +36,9 @@ const App = () => {
         <FittedBackgroundComponent image={backgroundImage} />
         <Header />
         <Switch>
-          <Route path="/profiles">
-            <Profiles />
-          </Route>
-
           <Route path="/login">
             <Login />
           </Route>
-
           <Route path="/">
             <Home />
           </Route>

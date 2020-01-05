@@ -1,5 +1,5 @@
 import React from "react";
-import ProfileIcon from "../presentationals/ProfileIcon";
+import ProfileIcon from "../ProfileIcon";
 
 const ProfileList = props => {
   const { profiles } = props;

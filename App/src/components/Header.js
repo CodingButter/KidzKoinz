@@ -14,7 +14,6 @@ export default props => {
           <Logo src={LogoImage} />
         </Link>
         <Nav>
-          <Link to="/profiles">Profiles</Link>
           <Link to="/login">Login</Link>
         </Nav>
       </Edges>

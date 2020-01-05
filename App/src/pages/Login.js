@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import { useMutation } from "@apollo/react-hooks";
 
-import FittedBackgroundComponent from "../components/presentationals/FittedBackgroundComponent";
+import FittedBackgroundComponent from "../components/FittedBackgroundComponent";
 import { LOGIN_USER_MUTATION } from "../apollo/mutation";
 
 import backgroundImage from "../img/login_background.jpg";
 
 import { setAuth } from "../auth";
+import styled from "styled-components";
 
 const LoginPage = props => {
   const [executeLogin, { data, error, loading, called }] = useMutation(
@@ -57,7 +58,7 @@ const LoginPage = props => {
 
   const onSubmit = e => {
     e.preventDefault();
-
+    setFormError(null);
     const { username, password } = values;
     if (!username || !password) {
       setFormError("Enter a username and password");
@@ -68,31 +69,37 @@ const LoginPage = props => {
   };
 
   return (
-    <div>
+    <>
       <FittedBackgroundComponent image={backgroundImage} />
-      {formError && <div>{formError}</div>}
-      <form id="loginForm" onSubmit={e => onSubmit(e)}>
-        <input
-          type="text"
-          name="username"
-          placeholder="Email"
-          onChange={handleChange}
-          value={values.username}
-        />
-        <input
-          type="password"
-          name="password"
-          placeholder="Password"
-          onChange={handleChange}
-          value={values.password}
-        />
-      </form>
-
-      <button form="loginForm" type="submit">
-        Login
-      </button>
-    </div>
+      <FormWrapper id="form-wrapper">
+        <form id="loginForm" onSubmit={e => onSubmit(e)}>
+          <h1>Sign In</h1>
+          <formgroup className="form-error">
+            {formError && <div>{formError}</div>}
+          </formgroup>
+          <input
+            type="text"
+            name="username"
+            placeholder="Email"
+            onChange={handleChange}
+            value={values.username}
+          />
+          <input
+            type="password"
+            name="password"
+            placeholder="Password"
+            onChange={handleChange}
+            value={values.password}
+          />
+          <button form="loginForm" type="submit">
+            Login
+          </button>
+        </form>
+      </FormWrapper>
+    </>
   );
 };
+
+const FormWrapper = styled.div``;
 
 export default LoginPage;
