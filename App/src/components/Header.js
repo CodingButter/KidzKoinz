@@ -46,3 +46,6 @@ const Header = styled.div`
 const Logo = styled.img`
   width: 110px;
 `;
+
+//Set Display names for Styled Components
+Nav.dipslayName = "main-nav";

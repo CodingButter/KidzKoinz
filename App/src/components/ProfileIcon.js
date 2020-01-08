@@ -20,6 +20,9 @@ const ProfileName = styled.p`
   position: absolute;
 `;
 
+//Name Style Compoents
+MyAvatarWrapper.displayName = "Avatar-Wrapper";
+
 const ProfileIcon = ({ profile }) => {
   return (
     <MyAvatarWrapper>

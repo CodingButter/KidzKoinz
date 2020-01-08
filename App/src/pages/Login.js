@@ -14,7 +14,7 @@ const LoginPage = props => {
     LOGIN_USER_MUTATION,
     {
       onCompleted(response) {
-        console.log({ response });
+        console.log(response);
 
         if (response?.login) {
           const { authToken, refreshToken, id } = response.login;
@@ -37,7 +37,7 @@ const LoginPage = props => {
     }
   );
 
-  console.log({ data, error, loading, called });
+  //console.log({ data, error, loading, called });
 
   // const onClick = () => {
   //   executeLogin({
@@ -72,29 +72,28 @@ const LoginPage = props => {
     <>
       <FittedBackgroundComponent image={backgroundImage} />
       <FormWrapper id="form-wrapper">
-        <form id="loginForm" onSubmit={e => onSubmit(e)}>
+        <LoginForm id="loginForm" onSubmit={e => onSubmit(e)}>
           <h1>Sign In</h1>
-          <formgroup className="form-error">
-            {formError && <div>{formError}</div>}
-          </formgroup>
-          <input
+
+          {formError && <div>{formError}</div>}
+          <UsernameInput
             type="text"
             name="username"
             placeholder="Email"
             onChange={handleChange}
             value={values.username}
           />
-          <input
+          <PasswordInput
             type="password"
             name="password"
             placeholder="Password"
             onChange={handleChange}
             value={values.password}
           />
-          <button form="loginForm" type="submit">
+          <LoginButton form="loginForm" type="submit">
             Login
-          </button>
-        </form>
+          </LoginButton>
+        </LoginForm>
       </FormWrapper>
     </>
   );
@@ -102,4 +101,22 @@ const LoginPage = props => {
 
 const FormWrapper = styled.div``;
 
+const LoginForm = styled.form``;
+
+const UsernameInput = styled.input`
+  padding: 5px;
+`;
+
+const PasswordInput = styled.input`
+  padding: 5px;
+`;
+
+const LoginButton = styled.button`
+  padding: 10px;
+`;
+
+LoginForm.displayName = "login_form";
+UsernameInput.displayName = "username_input";
+PasswordInput.displayName = "password_input";
+LoginButton.displayName = "login_button";
 export default LoginPage;

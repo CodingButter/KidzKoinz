@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`shallow Sould return the logo an nav 1`] = `
+<styled.div>
+  <_default>
+    <Link
+      to="/"
+    >
+      <styled.img
+        src="logo.png"
+      />
+    </Link>
+    <styled.nav>
+      <Link
+        to="/login"
+      >
+        Login
+      </Link>
+    </styled.nav>
+  </_default>
+</styled.div>
+`;
