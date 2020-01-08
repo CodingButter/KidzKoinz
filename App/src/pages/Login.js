@@ -115,8 +115,8 @@ const LoginButton = styled.button`
   padding: 10px;
 `;
 
-LoginForm.displayName = "login_form";
-UsernameInput.displayName = "username_input";
-PasswordInput.displayName = "password_input";
+LoginForm.displayName = "LoginForm";
+UsernameInput.displayName = "UsernameInput";
+PasswordInput.displayName = "PasswordInput";
 LoginButton.displayName = "login_button";
 export default LoginPage;

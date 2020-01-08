@@ -5,18 +5,10 @@ import { apolloClient } from "../apollo";
 import { LOGIN_USER_MUTATION } from "../apollo/mutation/LOGIN_USER_MUTATION";
 import Login from "./Login";
 
-const CUSTOM_QUERY = gql`
-  mutation someQuery($x: String!) {
-    doStuff(x: $x) {
-      key
-    }
-  }
-`;
-
 const mocks = [
   {
     request: {
-      query: CUSTOM_QUERY,
+      query: LOGIN_USER_MUTATION,
       variables: {
         x: "test_user"
       }
@@ -28,7 +20,7 @@ const mocks = [
     }
   }
 ];
-it("renders without error", () => {
+it("handles the autentication when [insert the goal of your test]", () => {
   //mount the login component using the mock provider toreturn expected response from our "SERVER"
   const wrapper = mount(
     <ApolloProvider client={apolloClient}>
@@ -37,12 +29,8 @@ it("renders without error", () => {
       </MockedProvider>
     </ApolloProvider>
   );
-  //find the username and password inputs and set the value for our simulation test
-  // const usernameInput = wrapper.find("usernameInput");
-  // usernameInput.value = "test_user";
-  // usernameInput.debug();
-  // const passwordInput = wrapper.find("passwordInput");
-  // passwordInput.value = "test_password";
-  // const loginForm = wrapper.find("loginForm");
-  //loginForm.simulate("submit");
+
+  wrapper.find("UsernameInput").value = "test_user";
+  wrapper.find("PasswordInput").value = "test_password";
+  wrapper.find("LoginForm").simulate("submit");
 });
