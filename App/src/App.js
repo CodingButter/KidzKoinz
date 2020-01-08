@@ -1,8 +1,7 @@
 import React from "react";
 import { createGlobalStyle } from "styled-components/macro";
 
-import ApolloClient from "apollo-boost";
-import { ApolloProvider } from "@apollo/react-hooks";
+import { apolloClient } from "./apollo";
 
 import miniReset from "./miniReset";
 import Header from "./components/Header";
@@ -20,17 +19,13 @@ const GlobalStyle = createGlobalStyle`
   ${miniReset}
 `;
 
-const client = new ApolloClient({
-  uri: "http://jnich.tk/wordpress/graphql"
-});
-
 //
 // Set up global state with useContext
 // Impliment a router
 
 const App = () => {
   return (
-    <ApolloProvider client={client}>
+    <ApolloProvider client={apolloClient}>
       <Router>
         <GlobalStyle />
         <FittedBackgroundComponent image={backgroundImage} />

@@ -1,7 +1,9 @@
 import Header from "./Header";
-describe("shallow", () => {
-  it("Sould return the logo an nav", () => {
+
+describe("Header component", () => {
+  it("should match the actual snapshot", () => {
     const wrapper = shallow(<Header />);
+
     expect(wrapper).toMatchSnapshot();
   });
 });
