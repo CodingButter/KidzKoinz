@@ -1,2 +1,0 @@
-# KidzKoinz
-A cool app
