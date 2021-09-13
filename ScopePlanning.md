@@ -7,7 +7,7 @@ and the value of hard work and respect.
 
 ---
 
-## Key objectives of the project. (S.M.A.R.T. goals)
+## Key objectives of the project.
 
 ### Account Registration / Profile Creaction
 
