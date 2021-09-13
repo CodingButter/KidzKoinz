@@ -11,14 +11,24 @@ and the value of hard work and respect.
 
 ### Account Registration / Profile Creaction
 
+- Parent - 11 days
+  - Account Create - 1 Week | 3 day
+  - Creating Child Profiles - 2 day | 2 day
+
+### Login
+
 - Parent
-  - Create
-  - Creating Child Profiles
+  - Main Login
+  - Google Auth
+- Chilren
+  - Profile Login
+    - Profile Select
+    - Pin/Password
 
 ### Profile Managment
 
 - Parent
-  - Own Account
+  - Own Account -
     - Password Reset
   - Chilren Profiles
     - Change Name
@@ -28,6 +38,18 @@ and the value of hard work and respect.
   - Change Name
   - Change Avatar
   - Change Password
+
+### Household Store
+
+- Parent
+  - Create New Store
+  - Modification
+- Children
+  - Viewing
+  - Checkout
+  - Adding to Favorites
+
+---
 
 ### Dashboard
 
@@ -45,15 +67,3 @@ and the value of hard work and respect.
     - Product Tracking
     - Chores Checklist
     - Accomplishments
-
-### Household Store
-
-- Parent
-  - Create New Store
-  - Modification
-- Children
-  - Viewing
-  - Checkout
-  - Adding to Favorites
-
----
