@@ -9,9 +9,9 @@ and the value of hard work and respect.
 
 ## Key objectives of the project.
 
-Scope Timline: 10 weeks OR 2 1/2 Months
+Scope Timeline: 10 weeks OR 2 1/2 Months
 
-### Infastructure work
+### Infrastructure work
 
 - [ ] Server Setup
 - [ ] Setting up dev ops (CICD)
@@ -19,7 +19,7 @@ Scope Timline: 10 weeks OR 2 1/2 Months
 - [ ] Load Balancing
 - [ ] Logging (splunk?)
 
-### Account Registration / Profile Creaction
+### Account Registration / Profile Creation
 
 **(2 weeks)**
 
@@ -34,19 +34,19 @@ Scope Timline: 10 weeks OR 2 1/2 Months
 - [ ] Parent
   - [ ] Main Login - 1 day | 1 day
   - [ ] Google Auth 1 day | 1 day
-- [ ] Chilren
+- [ ] Children
   - [ ] Profile Login
     - [ ] Profile Select 1 day | 1 day
     - [ ] Pin/Password 1 day
 
-### Profile Managment
+### Profile Management
 
 **(1 week)**
 
 - [ ] Parent
   - [ ] Own Account -
     - [ ] Password Reset - 1 day
-  - [ ] Chilren Profiles
+  - [ ] Children Profiles
     - [ ] Change Name - 1 day
     - [ ] Change Avatar - 1 day
     - [ ] Change Password - 1 day
@@ -75,7 +75,7 @@ Scope Timline: 10 weeks OR 2 1/2 Months
   - [ ] Widgets
     - [ ] Koin Balance - (depends on complexity)
     - [ ] Children Balance - 1 day | 1 day
-    - [ ] Chilren Purchases - 2 day | 1 day
+    - [ ] Children Purchases - 2 day | 1 day
     - [ ] Product Tracking - 2 day | 1 day
   - [ ] Purchase Koinz 1 day | 1 day
 - [ ] Child
@@ -94,13 +94,21 @@ Scope Timline: 10 weeks OR 2 1/2 Months
 
         Parent can go to a registration or login page and use their email or google account to set up or their account on our app or to access the dashbaord
 
+  - Account Management
+
+        A Parent can:
+        Change passwords for their own account as well as child profiles
+        they also can create or remove child profiles.
+
 - Household Store
 
       A Parent Can:
        Create a new store by navigating to the store page and selecting the plus/create store Button,
        Then they can title the store and assign children to the store.
 
-       The can then add products by clicking the plus/insert new product button and search a product by name within the newley created row. This will expand to show results and each result can expand to show details as well as be added to the store with a simple click on a plus button.
+       They can then add products by clicking the plus/insert new product button and search a product by name within the newley created row. This will expand to show results and each result can expand to show details as well as be added to the store with a simple click on a plus button.
+
+       When adding a new product to the store they can choose to define an activity and assign a Koin Value this includes but is not limited to (play time,in app game time,other events)
 
        Once a product is added to the store the title, description, category and price in Koins can be modified.
 
@@ -115,10 +123,24 @@ Scope Timline: 10 weeks OR 2 1/2 Months
 
       A parent Can:
         interact with multiple widgets with various functionalities such as viewing a childs requested orders and product favorites,
-      balances, chores status ,accomplishments,
+      balances, chores status, accomplishments,
       and current product tracking info for ordered products.
 
       A child Can:
-        interact with multiple widgets with various functionalities such as viewing order status, and tracking for a product, chores status, acccomplishments, aswell as their favorited products with
+        interact with multiple widgets with various functionalities such as viewing order status, and tracking for a product,recent acccomplishments, aswell as their favorited products with a progress bar indicating how many more koinz they need.
 
-- Profiles
+- Child Profiles
+
+      Children can:
+        Change their passwords, avatars
+
+- Earning Zone
+
+      Parents can:
+        Create accomplishments and assign Koinz to them (e.g Completing chore list, well bahaived in public, doing well in school, ect...)
+
+## Major Constraints.
+
+- Time
+
+      The project will only have an average of 40 hours a week invested into it
