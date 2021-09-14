@@ -88,8 +88,37 @@ Scope Timline: 10 weeks OR 2 1/2 Months
 
 ## Major Deliverables
 
-- [ ] Parent accounts
-- [ ] Household Store
-- [ ] Child Profiles
-- [ ] Parent Dashboard
-- [ ] Child Dashboard
+- Parent accounts
+
+  - Register/Login with google or email
+
+        Parent can go to a registration or login page and use their email or google account to set up or their account on our app or to access the dashbaord
+
+- Household Store
+
+      A Parent Can:
+       Create a new store by navigating to the store page and selecting the plus/create store Button,
+       Then they can title the store and assign children to the store.
+
+       The can then add products by clicking the plus/insert new product button and search a product by name within the newley created row. This will expand to show results and each result can expand to show details as well as be added to the store with a simple click on a plus button.
+
+       Once a product is added to the store the title, description, category and price in Koins can be modified.
+
+      A Child Can:
+      Select a category by clicking on the large category button that includes a recognizable photo and category title (UI age dependant)
+
+      Once a category is selected the child is presented an infinite scroll of products with images,title, and price in Koinz.
+      When a child clicks on a product image the product
+      expands and they are presented with an add to favorites and purchase button as well as a product review youtube video (description dependant on age)
+
+- Dashboard
+
+      A parent Can:
+        interact with multiple widgets with various functionalities such as viewing a childs requested orders and product favorites,
+      balances, chores status ,accomplishments,
+      and current product tracking info for ordered products.
+
+      A child Can:
+        interact with multiple widgets with various functionalities such as viewing order status, and tracking for a product, chores status, acccomplishments, aswell as their favorited products with
+
+- Profiles
